@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="FACULDADE"
+		transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/faculdadeDS</jta-data-source>
+		<properties>
+			<!--Hibernate properties -->
+			<property name="hibernate.default_schema" value="FACULDADE" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<!-- property name="hibernate.hbm2ddl.auto" value="validate" / --><!-- "Validate" evita criAcao de tabelas e Colunas -->
+			<property name="hibernate.hbm2ddl.auto" value="update" /><!-- "Update" Cria tabelas e Colunas faltantes -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+		</properties>
+	</persistence-unit>
+</persistence>
